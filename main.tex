@@ -1,14 +1,32 @@
 \documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{blindtext}
+\usepackage{authblk}
+\usepackage[utf8]{inputenc}
+\usepackage{glossaries}
+\usepackage[
+backend=biber,
+sorting=ynt
+]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\makeglossaries
+\loadglsentries{glossary}
+
 
 \title{Project Dawn}
-\author{emilia nicha }
-\date{January 2024}
+\author{
+    Emilia Victoria Helsted\\ ehel@itu.dk
+   \and 
+   Nicholas Hansen\\ nicha@itu.dk }
+\date{May 2024}
 
 \begin{document}
 
 \maketitle
-
+\newpage
 \section*{Abstract}
 \section{Introduction}
 \subsection{Context}
@@ -20,5 +38,14 @@
 \section{Implementation}    
 \section{Lessons Learnt and Future Work}    
 \section{Conclusion}
+\subfile{sections/example}
+
+\clearpage
+
+\printglossaries
+
+\medskip
+
+\printbibliography
 
 \end{document}
